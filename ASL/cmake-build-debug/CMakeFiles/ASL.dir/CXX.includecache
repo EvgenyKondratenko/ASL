@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Evgeny/CLionProjects/ASL/src/Atom.cpp
+Atom.h
+C:/Users/Evgeny/CLionProjects/ASL/src/Atom.h
+
+C:/Users/Evgeny/CLionProjects/ASL/src/Atom.h
+Thing.h
+C:/Users/Evgeny/CLionProjects/ASL/src/Thing.h
+
+C:/Users/Evgeny/CLionProjects/ASL/src/Thing.h
+vector
+-
+
