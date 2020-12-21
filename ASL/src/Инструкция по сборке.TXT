@@ -1,0 +1,1 @@
+flex lexer.l && bison -dy yacc.y --verbose && g++ lex.yy.c y.tab.c Thing.cpp Atom.cpp Undef.cpp Atoms/QName.cpp Atoms/Integer.cpp Atoms/Double.cpp Atoms/String.cpp Atoms/Boolean.cpp Node.cpp Interpreter.cpp -o parser.exe

@@ -1,0 +1,14 @@
+1;
+2;
+name;
+"Asl string";
+10.0;
+true;
+false;
+$a = 7;
+$a = 8;
+$b = $a;
+$a = 9;
+$b;
+$a + $b;
+$e = $a + 1 + $b;

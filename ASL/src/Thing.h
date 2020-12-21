@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 
 class Thing {
 public:
@@ -24,7 +25,8 @@ public:
     virtual Thing* read(std::vector<Thing*> params) const = 0;
 
     virtual bool toBoolean() const = 0;
-    virtual Thing* toString() const = 0;
+    virtual std::string toString() const = 0;
+    virtual std::string toStringWithIndent(int indent) const = 0;
 
     // toDo
     // delete attr
@@ -53,6 +55,7 @@ public:
     // Console
     virtual void print() const = 0;
     virtual void println() const = 0;
+
 
     /*
     // Variable

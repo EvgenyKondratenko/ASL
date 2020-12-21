@@ -63,9 +63,14 @@ bool Atom::toBoolean() const {
     return false;
 }
 
-Thing* Atom::toString() const {
-    return nullptr;
+std::string Atom::toString() const {
+    return "";
 }
+
+std::string Atom::toStringWithIndent(int indent) const {
+    return this->toString();
+}
+
 
 // Sequence
 Thing* Atom::copySeq() const {

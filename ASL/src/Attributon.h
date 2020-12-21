@@ -1,13 +1,17 @@
 #pragma once
 #include "Thing.h"
-#include <map>
+#include <unordered_map>
 #include <string>
+
 
 
 class Attributon : public Thing {
 public:
     Attributon();
     ~Attributon() override;
+
+    Thing* getAttr(Thing* key);
+    void setAttr(Thing* key, Thing* attr_value);
 
     // for Thing
     bool isAtom() const final;
@@ -29,7 +33,8 @@ public:
     Thing* read(std::vector<Thing*> params) const override;
 
     bool toBoolean() const override;
-    Thing* toString() const override;
+    std::string toString() const override;
+    std::string toStringWithIndent(int indent) const;
 
     // for Attributon
     Attributon* aref(std::vector<Thing*> params) const;
@@ -56,9 +61,10 @@ public:
 
     // Console
     void print() const override;
+    void print_with_indent(int indent = 0) const;
     void println() const override;
 
 
 private:
-    std::map<std::string, Attributon*> attributes;
+    std::unordered_map<Thing*, Thing*, std::hash<Thing*>> attributes;
 };

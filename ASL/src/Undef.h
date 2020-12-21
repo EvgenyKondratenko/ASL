@@ -1,12 +1,12 @@
 #pragma once
 #include "Thing.h"
 
-
-class Atom : public Thing {
+class Undef : public Thing {
 public:
-    Atom();
-    ~Atom() override;
 
+    static Undef* getInstance();
+
+    // for Thing
     bool isAtom() const final;
     bool isAttributon() const final;
     bool isBoolean() const override;
@@ -15,8 +15,8 @@ public:
     bool isString() const override;
     bool isQName() const override;
 
-    Atom* copyDeep() const override;
-    Atom* copyShallow() const override;
+    Undef* copyDeep() const override;
+    Undef* copyShallow() const override;
 
     bool eq(Thing *rhs) const override;
     bool neq(Thing *rhs) const override;
@@ -28,6 +28,11 @@ public:
     bool toBoolean() const override;
     std::string toString() const override;
     std::string toStringWithIndent(int indent) const final;
+
+    // for Attributon
+    Undef* aref(std::vector<Thing*> params) const;
+    Undef* aset(std::vector<Thing*> params) const;
+    Undef* conz(std::vector<Thing*> params) const;
 
     // Sequence
     Thing* copySeq() const final;
@@ -51,4 +56,7 @@ public:
     void print() const override;
     void println() const override;
 
+private:
+    static Undef* instance;
+    Undef();
 };

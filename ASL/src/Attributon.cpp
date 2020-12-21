@@ -1,8 +1,29 @@
 #include "Attributon.h"
+#include "Undef.h"
+#include <iostream>
+#include <sstream>
+#include <map>
 
 
 Attributon::Attributon() {}
 Attributon::~Attributon() noexcept {}
+
+
+Thing* Attributon::getAttr(Thing* key) {
+    //toDo ask what should it return for non-existing key
+    auto it = attributes.find(key);
+    if (it != attributes.end()) {
+        return attributes[key];
+    }
+    Thing* un = Undef::getInstance();
+    return un;
+}
+
+
+void Attributon::setAttr(Thing* key, Thing* attr_value) {
+    attributes[key] = attr_value;
+}
+
 
 bool Attributon::isAtom() const {
     return false;
@@ -63,8 +84,35 @@ bool Attributon::toBoolean() const {
     return false;
 }
 
-Thing* Attributon::toString() const {
-    return nullptr;
+std::string Attributon::toString() const {
+    int indent = 4;
+    std::ostringstream os;
+    os << this->toStringWithIndent(indent);
+    return os.str();
+}
+
+std::string Attributon::toStringWithIndent(int indent) const {
+    int l = attributes.size();
+    if (l == 0) {
+        std::cout << "";
+        return "{}";
+    }
+
+    std::ostringstream os;
+    os << "{\n";
+    for (auto it = attributes.begin(); it != attributes.end(); ++it) {
+        os << std::string(indent, ' ');
+        os << it->first->toStringWithIndent(indent + 4);
+        os << " = ";
+        os << it->second->toStringWithIndent(indent + 4);
+        if (attributes.end() != std::next(it)) {
+            os << ", \n";
+        }
+    }
+    os << "\n";
+    os << std::string(indent - 4, ' ');
+    os << "}";
+    return os.str();
 }
 
 Attributon* Attributon::aref(std::vector<Thing *> params) const {
@@ -138,5 +186,13 @@ Thing* Attributon::undef() const {
 }
 
 // Console
-void Attributon::print() const {}
+void Attributon::print() const {
+    this->print_with_indent(0);
+}
+
+
+void Attributon::print_with_indent(int indent) const {
+}
+
+
 void Attributon::println() const {}

@@ -1,0 +1,77 @@
+{
+    QNameAtom("variables") = {}, 
+    QNameAtom("value") = IntegerAtom(1)
+}
+{
+    QNameAtom("variables") = {}, 
+    QNameAtom("value") = IntegerAtom(2)
+}
+{
+    QNameAtom("variables") = {}, 
+    QNameAtom("value") = QNameAtom("name")
+}
+{
+    QNameAtom("variables") = {}, 
+    QNameAtom("value") = StringAtom("Asl string")
+}
+{
+    QNameAtom("variables") = {}, 
+    QNameAtom("value") = DoubleAtom(10)
+}
+{
+    QNameAtom("variables") = {}, 
+    QNameAtom("value") = BooleanAtom(true)
+}
+{
+    QNameAtom("variables") = {}, 
+    QNameAtom("value") = BooleanAtom(false)
+}
+{
+    QNameAtom("variables") = {
+        QNameAtom("a") = IntegerAtom(7)
+    }, 
+    QNameAtom("value") = IntegerAtom(7)
+}
+{
+    QNameAtom("variables") = {
+        QNameAtom("a") = IntegerAtom(8)
+    }, 
+    QNameAtom("value") = IntegerAtom(8)
+}
+{
+    QNameAtom("variables") = {
+        QNameAtom("b") = IntegerAtom(8), 
+        QNameAtom("a") = IntegerAtom(8)
+    }, 
+    QNameAtom("value") = IntegerAtom(8)
+}
+{
+    QNameAtom("variables") = {
+        QNameAtom("b") = IntegerAtom(8), 
+        QNameAtom("a") = IntegerAtom(9)
+    }, 
+    QNameAtom("value") = IntegerAtom(9)
+}
+{
+    QNameAtom("variables") = {
+        QNameAtom("b") = IntegerAtom(8), 
+        QNameAtom("a") = IntegerAtom(9)
+    }, 
+    QNameAtom("value") = IntegerAtom(8)
+}
+{
+    QNameAtom("variables") = {
+        QNameAtom("b") = IntegerAtom(8), 
+        QNameAtom("a") = IntegerAtom(9)
+    }, 
+    QNameAtom("value") = IntegerAtom(17)
+}
+{
+    QNameAtom("variables") = {
+        QNameAtom("e") = IntegerAtom(18), 
+        QNameAtom("a") = IntegerAtom(9), 
+        QNameAtom("b") = IntegerAtom(8)
+    }, 
+    QNameAtom("value") = IntegerAtom(18)
+}
+syntax error
